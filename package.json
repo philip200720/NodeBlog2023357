@@ -1,0 +1,20 @@
+{
+  "name": "nodeblog2023357",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philip200720/NodeBlog2023357.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/philip200720/NodeBlog2023357/issues"
+  },
+  "homepage": "https://github.com/philip200720/NodeBlog2023357#readme"
+}
