@@ -1,5 +1,24 @@
 import Post from "./post.model.js";
 
+export const createPost = async (req, res) => {
+    try {
+        const data = req.body;
+        const post = await Post.create(data)
+
+        return res.status(201).json({
+            success: true,
+            message: "Post has been created",
+            post
+        });
+    } catch (err) {
+        return res.status(500).json({
+            success: false,
+            message: "Error creating post",
+            error: err.message
+        });
+    }
+};
+
 export const getPostById = async (req, res) => {
     try {
         const { id } = req.params;
@@ -57,7 +76,7 @@ export const getPosts = async (req, res) => {
     }
 };
 
-export const updatePostById = async (req, res) => {
+export const updatePost = async (req, res) => {
     try {
         const { id } = req.params;
         const { title, content, course } = req.body;
@@ -98,7 +117,7 @@ export const deletePost = async (req, res) => {
             { new: true }
         );
 
-        if (!post) {
+        if (!deletedPost) {
             return res.status(404).json({
                 success: false,
                 message: "Post not found"

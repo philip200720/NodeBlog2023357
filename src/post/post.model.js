@@ -8,13 +8,18 @@ const postSchema = new Schema({
     },
     content: {
         type: String,
-        required: [true, "Content is required"]
+        required: [true, "Content is required"],
+        maxLength: [3000, "Content cannot exceed 3000 characters"]
     },
     course: {
         type: String,
         required: [true, "Course is required"],
         enum: ["INGLÉS", "BIOLOGÍA", "TECNOLOGÍA", "MATEMÁTICA", "SEMINARIO", "PSICOLOGÍA", "FÍSICA", "ÉTICA", "TALLER", "PRÁCTICA"],
     },
+    status: {
+        type: Boolean,
+        default: true
+    }
 },{
     versionKey: false,
     timestamps: true

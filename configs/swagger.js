@@ -20,7 +20,7 @@ const options ={
         ]
     },
     apis:[
-        
+        "./src/post/post.routes.js",
     ]
 }
 
