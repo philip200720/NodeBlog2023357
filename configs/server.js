@@ -7,7 +7,8 @@ import morgan from "morgan"
 import apiLimiter from "../src/middlewares/request-limit.js"
 import { dbConnection } from "./mongo.js"
 import postRoutes from "../src/post/post.routes.js"
-import { swaggerDocs, swaggerUi } from "./swagger.js" // Import Swagger configuration
+import commentRoutes from "../src/comment/comment.routes.js"
+import { swaggerDocs, swaggerUi } from "./swagger.js"
 
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended: false }))
@@ -20,6 +21,7 @@ const middlewares = (app) => {
 
 const routes = (app) => {
     app.use("/blog2023357/v1/post", postRoutes)
+    app.use("/blog2023357/v1/comment", commentRoutes)
     app.use("/blog2023357/v1/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 }
 
